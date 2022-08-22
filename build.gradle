@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+group 'com.github.stefan9110'
+version '0.1-ALPHA'
+
+sourceCompatibility = JavaVersion.toVersion('11')
+targetCompatibility = JavaVersion.toVersion('11')
+
+compileJava {
+    options.encoding = "UTF-8"
+}
+
+jar {
+    baseName = "MCChatProxy-v"
+
+    manifest {
+        attributes 'Main-Class' : 'com.github.stefan9110.MCChatProxy.Main'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
